@@ -8,10 +8,24 @@ from threading import Thread
 from Pb2 import DEcwHisPErMsG_pb2 , MajoRLoGinrEs_pb2 , PorTs_pb2 , MajoRLoGinrEq_pb2 , sQ_pb2 , Team_msg_pb2
 from cfonts import render, say
 
+# --- RENDER KEEP ALIVE CODE (Ye naya code hai) ---
+from flask import Flask
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I am alive! Bot is running."
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+# -----------------------------------------------
 
 #EMOTES BY PARAHEX X CODEX
 # FIXED BY ROSHAN ❄️ 
-
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  
 
@@ -31,8 +45,7 @@ custom_spam_running = False
 custom_spam_task = None
 spam_request_running = False
 spam_request_task = None
-#------------------------------------------#
- 
+#------------------------------------------# 
 ####################################
 
 #Clan-info-by-clan-id
@@ -1062,6 +1075,24 @@ async def MaiiiinE():
     print(f" - Subscribe > ROSHAN | Gaming ! (:")    
     await asyncio.gather(task1 , task2)
     
+# --- RENDER KEEP ALIVE CODE (Ye naya code hai) ---
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I am alive! Bot is running."
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+# -----------------------------------------------
+
 async def StarTinG():
     while True:
         try: await asyncio.wait_for(MaiiiinE() , timeout = 7 * 60 * 60)
@@ -1069,4 +1100,5 @@ async def StarTinG():
         except Exception as e: print(f"ErroR TcP - {e} => ResTarTinG ...")
 
 if __name__ == '__main__':
+    keep_alive()  # <-- Ye line server ko chalu rakhegi
     asyncio.run(StarTinG())

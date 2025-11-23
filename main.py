@@ -1,4 +1,4 @@
-import requests , os , psutil , sys , jwt , pickle , json , binascii , time , urllib3 , base64 , datetime , re , socket , threading , ssl , pytz , aiohttp
+importimport requests , os , psutil , sys , jwt , pickle , json , binascii , time , urllib3 , base64 , datetime , re , socket , threading , ssl , pytz , aiohttp
 from protobuf_decoder.protobuf_decoder import Parser
 from xC4 import * ; from xHeaders import *
 from datetime import datetime
@@ -8,24 +8,10 @@ from threading import Thread
 from Pb2 import DEcwHisPErMsG_pb2 , MajoRLoGinrEs_pb2 , PorTs_pb2 , MajoRLoGinrEq_pb2 , sQ_pb2 , Team_msg_pb2
 from cfonts import render, say
 
-# --- RENDER KEEP ALIVE CODE (Ye naya code hai) ---
-from flask import Flask
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "I am alive! Bot is running."
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
-# -----------------------------------------------
 
 #EMOTES BY PARAHEX X CODEX
 # FIXED BY ROSHAN ❄️ 
+
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  
 
@@ -1069,30 +1055,13 @@ async def MaiiiinE():
     os.system('clear')
     print(render('ROSHAN', colors=['white', 'green'], align='center'))
     print('')
+    print('')
     #print(' - ReGioN => {region}'.format(region))
     print(f" - BoT STarTinG And OnLine on TarGet : {TarGeT} | BOT NAME : {acc_name}\n")
     print(f" - BoT sTaTus > GooD | OnLinE ! (:")    
     print(f" - Subscribe > ROSHAN | Gaming ! (:")    
     await asyncio.gather(task1 , task2)
     
-# --- RENDER KEEP ALIVE CODE (Ye naya code hai) ---
-from flask import Flask
-from threading import Thread
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "I am alive! Bot is running."
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
-# -----------------------------------------------
-
 async def StarTinG():
     while True:
         try: await asyncio.wait_for(MaiiiinE() , timeout = 7 * 60 * 60)
@@ -1100,5 +1069,4 @@ async def StarTinG():
         except Exception as e: print(f"ErroR TcP - {e} => ResTarTinG ...")
 
 if __name__ == '__main__':
-    keep_alive()  # <-- Ye line server ko chalu rakhegi
     asyncio.run(StarTinG())
